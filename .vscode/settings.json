@@ -3,6 +3,8 @@
     "files.associations": {
         "*.js": "javascriptreact",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
