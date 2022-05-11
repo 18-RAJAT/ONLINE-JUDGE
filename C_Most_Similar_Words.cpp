@@ -52,11 +52,24 @@ cin.tie(NULL);
 int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
-Rajat_Joshi CSE;
-int n;cin>>n;
-string s;cin>>s;
-int ct=0;
-for(int i=0;i<n;i+=2){if(s[i]!=s[i+1])ct++;}cout<<ct<<endl;
+Rajat_Joshi CSE
+int n,m;cin>>n>>m;
+string arr[n];
+for(int i=0;i<n;++i){cin>>arr[i];}
+int answer=LONG_MAX;
+for(int i=0;i<n;++i)
+{
+    for(int j=i+1;j<n;++j)
+    {
+        int sum=0;
+        for(int k=0;k<m;++k)
+        {
+            sum += abs(arr[i][k] - arr[j][k]);
+        }
+        answer=min(sum,answer);
+    }
+}
+cout<<answer<<endl;
 }
 return 0;
 }

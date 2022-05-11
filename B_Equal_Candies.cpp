@@ -54,9 +54,12 @@ while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
 int n;cin>>n;
-string s;cin>>s;
-int ct=0;
-for(int i=0;i<n;i+=2){if(s[i]!=s[i+1])ct++;}cout<<ct<<endl;
+int arr[n];
+for(int i=0;i<n;++i){cin>>arr[i];}
+int answer=0;
+sort(arr,arr+n);for(int i=0;i<n;++i){answer+=(arr[i]-arr[0]);}
+cout<<answer<<endl;
 }
 return 0;
 }
+

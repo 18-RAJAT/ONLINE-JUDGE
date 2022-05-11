@@ -53,10 +53,10 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n;cin>>n;
 string s;cin>>s;
-int ct=0;
-for(int i=0;i<n;i+=2){if(s[i]!=s[i+1])ct++;}cout<<ct<<endl;
+int sum1=0;int sum2=0;
+for(int i=0;i<6;++i){int answer=s[i]-48; if(i<=2) sum1+=answer;else sum2+=answer;}
+if(sum1==sum2)cout<<"YES"<<endl;else cout<<"NO"<<endl;
 }
 return 0;
 }
