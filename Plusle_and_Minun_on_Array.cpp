@@ -80,7 +80,7 @@ Rajat_Joshi CSE;
     	for(auto x: v1) {
     		s -= x;
     	}
-    	cout << s << endl;
+    	cout<<s<<endl;
 }
 return 0;
 }
