@@ -51,13 +51,42 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 int ttt; cin >> ttt;
 while(ttt--) {
-    int n,arr[100001];
 //_______________________________________________________//
 Rajat_Joshi CSE;
-		cin>>n;
-		for(int i=1;i<=n;i++) cin>>arr[i];
-		cout<<min_element(arr+1,arr+1+n)-arr<<" "<<max_element(arr+1,arr+1+n)-arr<<endl;
+
+ int n,m,mx;
+      cin>>n>>m;
+      set<int>st;
+      vector<int>v;
+      
+      for(int i=0;i<n;i++)
+      {
+          int res;
+          
+          cin>>res;
+          st.insert(res);
+         }
+
+  for(auto i:st)
+  {
+    
+      v.push_back(i);
+  }
+  int a=v[v.size()-2];
+  int b=v[v.size()-1];
+  
+  int c=(a-b);
+    while(c<0)
+    {
+      c=c+m;
+    }
+  a=a+b;
+  a=a+c;
+int answer=v[v.size()-1];
+answer=answer+answer;
+mx=max(answer,a);
+
+cout<<mx<<endl;
 }
 return 0;
 }
-

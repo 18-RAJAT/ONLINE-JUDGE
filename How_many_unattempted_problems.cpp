@@ -49,15 +49,10 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-int ttt; cin >> ttt;
-while(ttt--) {
-    int n,arr[100001];
-//_______________________________________________________//
+//__________________________________________//
 Rajat_Joshi CSE;
-		cin>>n;
-		for(int i=1;i<=n;i++) cin>>arr[i];
-		cout<<min_element(arr+1,arr+1+n)-arr<<" "<<max_element(arr+1,arr+1+n)-arr<<endl;
-}
+int x,y;cin>>x>>y;
+int answer=x-y;
+cout<<answer<<endl;
 return 0;
 }
-

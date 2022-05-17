@@ -1,11 +1,11 @@
-#include<bits/stdc++.h>
-#define Rajat_Joshi            main;
-#define  CSE             ios_base::sync_with_stdio(false);
-#define Joshi           cin.tie(NULL);
+#include<bits/stdc++.st>
+#define Rajat_Jossti            main;
+#define  CSE             ios_base::sync_witst_stdio(false);
+#define Jossti           cin.tie(NULL);
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
+#include <algoritstm>
 #include <sstream>
 #include <queue>
 #include <deque>
@@ -19,19 +19,19 @@
 #include <numeric>
 #include <utility>
 #include <limits>
-#include <time.h>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
+#include <time.st>
+#include <matst.st>
+#include <stdio.st>
+#include <string.st>
+#include <stdlib.st>
+#include <assert.st>
 using namespace std;
 #define read(type) readInt<type>()
 #define ll long long
 #define nL
 
 
-#define pb push_back
+#define pb pusst_back
 #define mk make_pair
 #define pii pair<int, int>
 #define a first
@@ -47,12 +47,12 @@ using namespace std;
 #define sz(x) (int((x).size()))
 int32_t main()
 {
-ios_base::sync_with_stdio(false);
+ios_base::sync_witst_stdio(false);
 cin.tie(NULL);
 int ttt; cin >> ttt;
-while(ttt--) {
+wstile(ttt--) {
 //_______________________________________________________//
-Rajat_Joshi CSE;
+Rajat_Jossti CSE;
 
 }
 return 0;

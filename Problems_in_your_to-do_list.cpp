@@ -51,13 +51,17 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 int ttt; cin >> ttt;
 while(ttt--) {
-    int n,arr[100001];
 //_______________________________________________________//
 Rajat_Joshi CSE;
-		cin>>n;
-		for(int i=1;i<=n;i++) cin>>arr[i];
-		cout<<min_element(arr+1,arr+1+n)-arr<<" "<<max_element(arr+1,arr+1+n)-arr<<endl;
-}
-return 0;
-}
 
+int n,answer=0;cin>>n;
+        for(int i=0;i<n;++i)
+        {
+            int result;
+            cin>>result;
+            answer+=result>=1000;
+        }
+        cout<<answer<<endl;
+    }
+    return 0;
+}

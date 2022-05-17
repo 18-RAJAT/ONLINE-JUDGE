@@ -51,13 +51,45 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 int ttt; cin >> ttt;
 while(ttt--) {
-    int n,arr[100001];
 //_______________________________________________________//
 Rajat_Joshi CSE;
-		cin>>n;
-		for(int i=1;i<=n;i++) cin>>arr[i];
-		cout<<min_element(arr+1,arr+1+n)-arr<<" "<<max_element(arr+1,arr+1+n)-arr<<endl;
+  int w,x,y,z;
+  cin>>w>>x>>y>>z;
+
+  int a=x-w-y*z;
+        if(a==0){
+            cout<<"filled"<<endl;
+        }
+        else if(a<0){
+            cout<<"overFlow"<<endl;
+        }
+        else{
+            cout<<"Unfilled"<<endl;
+        }
 }
 return 0;
 }
 
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int t;
+//     cin>>t;
+//     while(t--){
+//         int w,x,y,z;
+//         cin>>w>>x>>y>>z;
+//         int a=x-w-y*z;
+//         if(a==0){
+//             cout<<"filled"<<endl;
+//         }
+//         else if(a<0){
+//             cout<<"overFlow"<<endl;
+//         }
+//         else{
+//             cout<<"Unfilled"<<endl;
+//         }
+//     }
+//     return 0;
+// }
