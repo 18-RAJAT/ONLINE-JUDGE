@@ -54,8 +54,13 @@ while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
 int n;cin>>n;int ct=0;
-for(int i=0;i<n;++i){int a;cin>>a;if(a==0)ct++;}
-cout<<2*ct<<endl;
+int arr[n];
+for(int i=0;i<n;++i)
+{
+cin>>arr[i];
+if(arr[i]==0){ct+=2;}
+}
+cout<<ct<<endl;
 }
 return 0;
 }
