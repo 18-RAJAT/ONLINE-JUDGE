@@ -53,8 +53,9 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n,s;cin>>n>>s;
-cout<<s/(n*n)<<endl;
+long long n,s;cin>>n>>s;
+long long b=n*n;
+cout<<s/b<<endl;
 }
 return 0;
 }
