@@ -53,9 +53,8 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
- int l1,r1,l2,r2;cin>>l1>>r1>>l2>>r2;
-        if(r1>=l2 && r2>=l1){cout<<max(l1,l2)<<endl;}
-        else{cout<<(l1+l2)<<endl;}
+int x,y;cin>>x>>y;
+cout<<(y-x+7)/8<<"\n";
 }
 return 0;
 }

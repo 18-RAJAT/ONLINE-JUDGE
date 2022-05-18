@@ -53,9 +53,14 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
- int l1,r1,l2,r2;cin>>l1>>r1>>l2>>r2;
-        if(r1>=l2 && r2>=l1){cout<<max(l1,l2)<<endl;}
-        else{cout<<(l1+l2)<<endl;}
+int n;cin>>n;
+map<string,int>mp;
+for(int i=0;i<n;++i)
+{
+    string s;cin>>s;
+    mp[s]++;
+}
+cout<<mp["START38"]<<' '<<mp["LTIME108"]<<'\n';
 }
 return 0;
 }

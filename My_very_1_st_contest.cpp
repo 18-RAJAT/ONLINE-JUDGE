@@ -49,13 +49,9 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-int ttt; cin >> ttt;
-while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
- int l1,r1,l2,r2;cin>>l1>>r1>>l2>>r2;
-        if(r1>=l2 && r2>=l1){cout<<max(l1,l2)<<endl;}
-        else{cout<<(l1+l2)<<endl;}
-}
+int n,a,b;cin>>n>>a>>b;
+cout<<n-a<<" "<<n-a-b<<'\n';
 return 0;
 }

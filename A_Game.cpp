@@ -53,14 +53,12 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n;cin>>n;int ct=0;
-int arr[n];
-for(int i=0;i<n;++i)
-{
-cin>>arr[i];
-if(arr[i]==0){ct+=2;}
-}
-cout<<ct<<endl;
+int n;cin>>n;int arr[n];
+for(int i=0;i<n;++i)cin>>arr[i];
+int start=1,end=n;
+while(arr[start+1]==1)start++;
+while(arr[end-1]==1)end--;
+cout<<max(0,end-start)<<"\n";
 }
 return 0;
 }

@@ -53,9 +53,8 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
- int l1,r1,l2,r2;cin>>l1>>r1>>l2>>r2;
-        if(r1>=l2 && r2>=l1){cout<<max(l1,l2)<<endl;}
-        else{cout<<(l1+l2)<<endl;}
+string s;cin>>s;
+puts((s.find('r')<s.find('R') and s.find('g')<s.find('G') and s.find('b')<s.find('B'))?"YES":"NO");
 }
 return 0;
 }

@@ -49,13 +49,26 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
+const int M=1e9+7;
 int ttt; cin >> ttt;
+set<char>st;
+st.insert('c');
+st.insert('g');
+st.insert('l');
+st.insert('r');
+st.insert('a');
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
- int l1,r1,l2,r2;cin>>l1>>r1>>l2>>r2;
-        if(r1>=l2 && r2>=l1){cout<<max(l1,l2)<<endl;}
-        else{cout<<(l1+l2)<<endl;}
+int n;cin>>n;
+string s;cin>>s;
+int answer=1;
+for(char ch : s)
+{
+    if(st.find(ch)!=st.end())
+    answer=(answer*2)%M;
+}
+cout<<answer<<endl;
 }
 return 0;
 }
