@@ -53,31 +53,9 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n,m,sum=0;cin>>n>>m;
-int arr[n];
-
-for(int i=0;i<n;++i)
-{
-    cin>>arr[i];sum+=arr[i];
-}
-sort(arr,arr+n);
-while(m--)
-{
-  int x,temp=sum;cin>>x;
-  if(x>sum){cout<<-1<<endl;}
-  else if(x==sum){cout<<n<<endl;}
-  else
-  {
-      int answer=0;
-      for(int i=0;i<n;++i)
-      {
-        if(temp-arr[i]<x){answer=n-i;break;}
-        temp-=arr[i];
-      }
-        cout<<answer<<endl;
-  }
-}
+string s;cin>>s;
+if(s.size()==2){cout<<s.back()<<"\n";}
+else{char answer=*min_element(s.begin(), s.end());cout<<answer<<"\n";}
 }
 return 0;
 }
-
