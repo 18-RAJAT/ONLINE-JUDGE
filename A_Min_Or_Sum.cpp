@@ -45,22 +45,18 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int solve()
+int32_t main()
 {
-    int a,b,c;cin >>a>>b>>c;
-    cout<<a+b+c<<' '<<b+c<<' '<<c<<'\n';
-    return 0;
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+int ttt; cin >> ttt;
+while(ttt--) {
+//_______________________________________________________//
+Rajat_Joshi CSE;
+	int n,x,a=0;
+		cin>>n;
+		while(n--) cin>>x,a|=x;
+		cout<<a<<endl;
 }
-signed main()
-{
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    //_______________________________________________________//
- //Rajat_Joshi CSE;
-
-    int t;
-    cin >> t;
-    while (t--)
-        solve();
-    return 0;
+return 0;
 }
