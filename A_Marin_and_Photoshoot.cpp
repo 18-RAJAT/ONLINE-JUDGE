@@ -49,16 +49,19 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-int ttt;cin >> ttt;
+int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n;cin>>n;
-int answer=0;
-string s;cin>>s;
-for(int i=0;i<n-1-i;++i)
-answer+=s[i]!=s[n-1-i];
-cout<<(answer+1)/2<<"\n";
+int n,sum;
+string s;
+cin>>n>>s;
+sum=0;
+for(int i=0;i<n;i++){
+if(s[i]=='0' and s[i+1]=='0') sum+=2;
+if(s[i]=='0' and s[i+1]=='1' and s[i+2]=='0') sum++;
+}
+cout<<sum<<endl;
 }
 return 0;
 }
