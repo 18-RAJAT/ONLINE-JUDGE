@@ -30,7 +30,7 @@ using namespace std;
 #define ll long long
 #define nL
 
-
+#define int long long
 #define pb push_back
 #define mk make_pair
 #define pii pair<int, int>
@@ -54,7 +54,7 @@ while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
 int n;cin>>n;
-int answer=n*(n+1)/2;
+long long answer=n*(n+1)/2;
 vector<vector<int>>v(n+1,vector<int>(1,-1));
 for(int i=0;i<n;++i)
 {
@@ -67,7 +67,7 @@ for(int i=1;i<=n;++i)
     for(int j=1;j<v[i].size();++j)
     {
         int temp=v[i][j]-v[i][j-1]-1;
-        answer=answer-max(0,temp-i+1);
+        answer=answer-max(0LL,temp-i+1);
     }
 }
 cout<<answer<<"\n";
