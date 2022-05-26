@@ -53,11 +53,26 @@ int ttt; cin >> ttt;
 while(ttt--) {
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int x,y,z,st,res;
-cin>>x>>y>>z;
-st=x-y;
-res=st*z;
-cout<<res<<endl;
+int n;cin>>n;
+int arr[n];
+int ct=0;
+for(int i=0;i<n;++i)
+{
+cin>>arr[i];
+if(ct>0)
+{
+    if(arr[i]<arr[i-1]){ct++;}
+
+}
+}
+if(ct>0)
+{
+    cout<<"NO\n";
+}
+else
+{
+    cout<<"Yes\n";
+}
 }
 return 0;
 }
