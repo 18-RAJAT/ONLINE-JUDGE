@@ -59,20 +59,14 @@ int ct=0;
 for(int i=0;i<n;++i)
 {
 cin>>arr[i];
-if(ct>0)
+if(i>0)
 {
     if(arr[i]<arr[i-1]){ct++;}
 
 }
 }
-if(ct>0)
-{
-    cout<<"NO\n";
-}
-else
-{
-    cout<<"Yes\n";
-}
+if(ct>0){cout<<"No\n";}
+else{cout<<"Yes\n";}
 }
 return 0;
 }
