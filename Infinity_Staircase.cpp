@@ -49,23 +49,18 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-int ttt; cin >> ttt;
-while(ttt--) {
+int ttt=1; cin >> ttt;
 //_______________________________________________________//
 Rajat_Joshi CSE;
-int n;cin>>n;
-vector<int>a(n),b(n);
-for(int i=0;i<n;++i){cin>>a[i];}
-for(int i=0;i<n;++i){cin>>b[i];}
-map<ll,ll>m;
-long long answer=0;
-for(int i=0;i<n;++i)
+for(int i=1;i<=ttt;++i)
 {
-    long long r=a[i]^b[i];
-    answer=answer+m[r];
-    m[r]++;
-}
-cout<<answer<<"\n";
+    int n;cin>>n;n--;
+    int answer=(n/5)*2;
+    n=n%5;
+
+    if(n==4){answer+=2;}
+    else if(n!=0)answer++;
+    cout<<answer<<"\n";
 }
 return 0;
 }
