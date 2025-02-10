@@ -9,13 +9,12 @@ void sol()
     vector<int>a(n),b(m);
     for(int i=0;i<n;++i)cin>>a[i];
     for(int i=0;i<m;++i)cin>>b[i];
-    // sort(a.begin(),a.end());
     sort(b.begin(),b.end());
     int ans=-N,ok=1;
     for(int i=0;i<n;++i)
     {
         int res=N;
-        if(ans<a[i])res=a[i];
+        if(ans<=a[i])res=a[i];
         int id=distance(b.begin(),lower_bound(b.begin(),b.end(),ans+a[i]));
         if(id<m)res=min(res,b[id]-a[i]);
         if(res==N)
