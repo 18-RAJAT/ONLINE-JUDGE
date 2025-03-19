@@ -7,25 +7,31 @@ void sol()
     cin>>n;
     vector<int>a(n);
     for(int i=0;i<n;++i)cin>>a[i];
-    int ok=0;
-    const int bit=30;
-    vector<int>f(bit,0);
-    for(auto& it:a)
-    {
-        ok|=it;
-        for(int i=0;i<bit;++i)if(it&(1<<i))f[i]++;
-    }
+    int res=0;
+    for(auto& it:a)res|=it;
     if(n%2==0)
     {
-        cout<<ok<<endl;
+        cout<<res<<endl;
         return;
+    }
+    vector<int>ar(30,0),bit(30);
+    for(int i=0;i<30;++i)bit[i]=1LL<<i;
+    for(auto& it:a)
+    {
+        for(int i=0;i<30;++i)
+        {
+            if(it&bit[i])ar[i]++;
+        }
     }
     int ans=0;
     for(auto& it:a)
     {
-        int tmp=0;
-        for(int i=0;i<bit;++i)if(f[i]>1 || (!(it&(1<<i)) && f[i]==1))tmp|=(1<<i);
-        ans=max(ans,tmp);
+        int cur=res;
+        for(int i=0;i<30;++i)
+        {
+            if((it&bit[i]) && ar[i]==1)cur&=~bit[i];
+        }
+        ans=max(ans,cur);
     }
     cout<<ans<<endl;
 }

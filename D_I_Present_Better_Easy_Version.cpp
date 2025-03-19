@@ -5,38 +5,27 @@ void sol()
 {
     int n,a,b;
     cin>>n>>a>>b;
-    vector<int>ar(n);
-    for(int i=0;i<n;++i)cin>>ar[i];
-    vector<int>l(n+1,0),r(n+1,0);
-    for(int i=1;i<=n;++i)
+    vector<int>arr(n);
+    for(int i=0;i<n;++i)cin>>arr[i];
+    deque<int>ar(n+1,0),br(n+1,0);
+    for(int i=0;i<n;++i)
     {
-        l[i]=l[i-1]+(ar[i-1]<a),r[i]=r[i-1]+(ar[i-1]<b);
+        ar[i+1]=ar[i]+(arr[i]<a?1:(arr[i]>a?-1:0));
+        br[i+1]=br[i]+(arr[i]<b?1:(arr[i]>b?-1:0));
     }
-    vector<int>A(n+1),B(n+1);
+    int chk=(a<b?1:(a>b?-1:0)),ans=0;
     for(int i=0;i<=n;++i)
     {
-        // cout<<"P-> "<<l[i*2]<<" ";
-        A[i]=2*l[i]-i,B[i]=2*r[i]-i;
-    }
-    int Ba=(a<b)?1:(a>b?-1:0),Ab=-Ba,ans=0;
-    for(int i=0;i<=n;++i)
-    {
-        for(int j=0;j<=n;++j)
+        for(int j=i+1;j<=n+1;++j)
         {
-            // cout<<A[i]<<" \n"<<B[j]<<" ";
-            if(i<j)
-            {
-                if(A[i]>B[j]+Ba)ans++;
-            }
-            else if(i>j)
-            {
-                if(A[i]+Ab>B[j])ans++;
-            }
-            else
-            {
-                if(A[i]>B[i]+Ba)ans++;
-                if(A[i]+Ab>B[i])ans++;
-            }
+            if(ar[i]>br[j-1]+chk)ans++;
+        }
+    }
+    for(int j=0;j<=n;++j)
+    {
+        for(int i=j+1;i<=n+1;++i)
+        {
+            if(ar[i-1]-chk>br[j])ans++;
         }
     }
     cout<<ans<<endl;
