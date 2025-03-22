@@ -12,7 +12,8 @@ void sol()
     for(int i=0;i<n;++i)
     {
         ans+=vp[i].second;
-        if(--res+=vp[i].first<=0)break;
+        res+=vp[i].first-1;
+        if(res<=0)break;
     }
     cout<<ans;
 }
