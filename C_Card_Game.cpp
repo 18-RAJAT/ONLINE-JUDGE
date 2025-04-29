@@ -1,34 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-int a[2000005];
 void sol()
 {
     int n;
     cin>>n;
-    int sum=0;
-    for(int i=1;i<=n;++i)
-    {
-        cin>>a[i];
-        if(a[i]>-1)
-        {
-            sum+=a[i];
-        }
-    }
-    if(n<2)
-    {
-        cout<<sum<<endl;
-    }
-    else
-    {
-        if(a[1]<0 && a[2]>0)
-        {
-            int ert=sum-abs(a[1]);
-            int calc=sum-abs(a[2]);
-            sum=max(calc,ert);
-        }
-        cout<<sum<<endl;
-    }
+    string s;
+    cin>>s;
+    int ok=count(s.begin(),s.end(),'B');
+    cout<<((s[n-1]=='B' && ok>=2) || (s[0]=='B' && s[n-2]=='B')?"Bob":"Alice")<<endl;
 }
 signed main()
 {
