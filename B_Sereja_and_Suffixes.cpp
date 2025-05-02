@@ -12,7 +12,7 @@ void sol()
     s.insert(a[n-1]);
     for(int i=n-2;~i;--i)
     {
-        if(s.count(a[i]))
+        if(s.find(a[i])==s.end())
         {
             ans[i]=ans[i+1]+1;
             s.insert(a[i]);
