@@ -10,12 +10,8 @@ void sol()
     int check=0,ans=0;
     for(int i=0;i<n;++i)
     {
-        while(check!=a[i])
-        {
-            if(a[i]<check)check--,ans++;
-            else check++,ans++;
-        }
-        ans+=1+(i<n-1);
+        ans+=abs(a[i]-check)+1+(i<n-1);
+        check=a[i];
     }
     cout<<ans;
 }
