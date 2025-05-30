@@ -5,28 +5,24 @@ void sol()
 {
     int n;
     cin>>n;
-    vector<int>a(n);
-    for(int i=0;i<n;++i)cin>>a[i];
-    int x,y,z;
-    x=y=z=0;
-    for(auto& it:a)
+    int a[n];
+    int sum=0;
+    for(int i=0;i<n;++i)
     {
-        if(it<0)y+=-it;
+        cin>>a[i];
+        if(a[i]<0)sum+=-a[i];
     }
-    int l=-1,r=-1;
-    for(int i=0;i<n;++i)if(a[i]>0){l=i;break;}
-    for(int i=n-1;~i;--i)if(a[i]>0){r=i;break;}
-    if(l==-1)
+    int ans=sum,s=0;
+    for(int i=0;i<n;++i)
     {
-        cout<<y<<endl;
-        return;
+        if(a[i]>0)
+        {
+            s+=a[i];
+            ans=max(ans,s+sum);
+        }
+        else sum-=-a[i];
     }
-    for(int i=l;i<n;++i)if(a[i]>0)z+=a[i];
-    int sum=0,res=0;
-    for(int i=l;i<=r;++i)if(a[i]>0)sum+=a[i];
-    for(int i=r+1;i<n;++i)if(a[i]<0)res+=-a[i];
-    x=sum+res;
-    cout<<max({x,y,z})<<endl;
+    cout<<ans<<endl;
 }
 signed main()
 {
