@@ -5,22 +5,22 @@ void sol()
 {
     int n;
     cin>>n;
-    vector<int>a(n+5);
-    for(int i=1;i<=n;++i)cin>>a[i];
-    vector<int>b=a;
-    int ans=0;
-    for(int i=n;i>=1;--i)
+    vector<int>a(n);
+    vector<int>dp(n+5,1e18);
+    for(int i=0;i<n;++i)cin>>a[i];
+    dp[n]=0;
+    for(int i=n-1;~i;--i)
     {
-        int tmp=b[i],res=-1;
-        for(int j=i+1;j<=n;++j)
+        for(int j=i;j<n;++j)
         {
-            int cost=b[j]+(j-i);
-            if(cost<tmp)tmp=cost,res=j;
+            dp[i]=min(dp[i],dp[j+1]+(j-i)*2+1LL*(j-i+1)*a[i]);
         }
-        if(res<0)ans+=b[i];
-        else ans+=tmp,b[res]=b[i],b[i]=b[res];
+        for(int j=0;j<i;++j)
+        {
+            dp[j]=min(dp[j],dp[i]+(i-j)+1LL*(i-j)*a[i]);
+        }
     }
-    cout<<ans<<endl;
+    cout<<dp[0]<<endl;
 }
 signed main()
 {
