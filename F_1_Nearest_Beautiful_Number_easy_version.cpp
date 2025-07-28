@@ -3,31 +3,22 @@ using namespace std;
 #define int long long
 void sol()
 {
-    int n,k;
-    cin>>n>>k;
-    if(k==1)
+    string s;
+    int k;
+    cin>>s>>k;
+    while(true)
     {
-        cout<<n<<endl;
-        return;
-    }
-    bitset<10>bs;
-    int x=n;
-    while(1)
-    {
-        bs.reset();
-        int y=x;
-        while(y)
+        set<char>st;
+        int i=0;
+        for(;i<s.size() && st.size()<=k;++i)st.insert(s[i]);
+        if(st.size()<=k)
         {
-            bs[y%10]=1;
-            y/=10;
-        }
-        if(bs.count()<=k)
-        {
-            cout<<x<<endl;
+            cout<<s<<endl;
             return;
         }
-        x+=n;
-    }   
+        int x=stoll(s.substr(0,i))+1;
+        s=to_string(x)+string(s.size()-i,'0');
+    }
 }
 signed main()
 {
