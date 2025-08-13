@@ -8,17 +8,11 @@ void sol()
     char ch;
     cin>>ch>>l>>r;
     if(ch=='+')mx=max(mx,max(l,r)),mn=max(mn,min(l,r));
-    else
-    {
-        cout<<(((mx<=l && mx<=r) || (mx<=r && mn<=l))?"YES":"NO")<<endl;
-    }
+    else cout<<(((mx<=l && mn<=r) || (mx<=r && mn<=l))?"YES":"NO")<<endl;
 }
 signed main()
 {
     int t;cin>>t;
-    while(t--)
-    {
-        sol();
-    }
+    while(t--)sol();
     return 0;
 }
