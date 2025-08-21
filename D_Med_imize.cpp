@@ -7,26 +7,23 @@ void sol()
     cin>>n>>k;
     vector<int>a(n);
     for(int i=0;i<n;++i)cin>>a[i];
-    int res=(n-1)%k+1,l=0,r=1e9+5;
-    while(r-l>=2)
+    int l=0,r=2e9+5,check=n-((n-1)/k)*k,ok=check/2+1;
+    while(r-l>1)
     {
-        int mid=(l+r)/2;
-        vector<int>ar(n);
-        for(int i=0;i<n;++i)ar[i]=(a[i]>=mid?1:-1);
-        vector<int>dp(res,-n);
+        int mid=(l+r)>>1;
+        vector<int>dp(min(n,k),-1);
         for(int i=0;i<n;++i)
         {
-            if(i%k==0)dp[0]=max(ar[i],dp[0]);
-            else dp[i%k]=max(ar[i]+dp[(i-1)%k],dp[i%k]);
+            int res=a[i]>=mid,j=i%k;
+            dp[j]=max(dp[j],res+(j>=1?dp[j-1]:0));
         }
-        (dp[res-1]>=1?l=mid:r=mid);
+        (dp[check-1]>=ok?l=mid:r=mid);
     }
     cout<<l<<endl;
 }
 signed main()
 {
-    int t;
-    cin>>t;
+    int t;cin>>t;
     while(t--)
     {
         sol();
