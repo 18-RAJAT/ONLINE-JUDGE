@@ -9,7 +9,7 @@ void ForY(vector<int>&a,vector<int>&move,int y,string&add)
 {
     a[y]--,move[y]--,add="y-";
 }
-signed main()
+signed main() 
 {
     int n,q;
     cin>>n>>q;
