@@ -5,69 +5,46 @@ void sol()
 {
     int n;
     cin>>n;
-    vector<vector<int>>a;
+    set<vector<int>>st;
     int mx=0;
     for(int i=0;i<n;++i)
     {
         int k;
         cin>>k;
-        vector<int>b(k);
-        // a[i].resize(k);mx=max(mx,k);
-        for(int j=0;j<k;++j)cin>>b[j];
-        a.push_back(b);
-        if(mx<k)mx=k;
-        // a.push_back(move(b));
+        mx=max(mx,k);
+        vector<int>v(k);
+        for(int j=0;j<k;++j)cin>>v[j];
+        st.insert(v);
     }
-    auto cmp=[&](vector<int>& x,vector<int>& y)
+    vector<int>ans;
+    while(ans.size()<mx)
     {
-        int a=x.size(),b=y.size();
-        int mn=min(a,b);
-        for(int i=0;i<mn;++i)
+        auto st=*st.begin();
+        int sz=st.size();
+        for(int i=0;i<sz;++i)ans.push_back(st[i]);
+        set<vector<int>>st1;
+        for(auto &s:st)
         {
-            if(x[i]!=y[i])return x[i]<y[i];
+            if(s.size()<=sz)continue;
+            vector<int>v2(s.begin()+sz,s.end());
+            st1.insert(v2);
         }
-        // while(i<a && i<b)
-        // {
-        //     if(x[i]!=y[i])return x[i]<y[i];i++;
-        // }
-        return a<b;
-    };
-    sort(a.begin(),a.end(),cmp);
-    vector<int>ans(mx,-1);
-    // ans.reserve(200005);
-    // int cur=0;
-    // for(int j=1;j<=mx;++j)
-    // {
-    //     while(cur<n && a[cur].size()<j)cur++;
-    //     cout<<a[cur][j-1]<<(j==mx?"\n":" ");
-    // }
-    for(auto& it:a)
-    {
-        // if(cur<it.size())
-        // {
-        //     ans.insert(ans.end(),it.begin()+(cur),it.end());
-        //     cur=it.size();
-        // }
-        for(int j=0;j<it.size();++j)
-        {
-            if(ans[j]==-1)ans[j]=it[j];
-        }
+        st.swap(st1);
     }
-    for(int i=0;i<mx;++i)
+    for(int i=0;i<ans.size();++i)
     {
-        if(i>=1){cout<<" ";}
+        if(i)cout<<" ";
         cout<<ans[i];
     }
-    // if(ans.empty())cout<<endl;
     cout<<endl;
 }
 signed main()
 {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        sol();
-    }
-    return 0;
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       sol();
+   }
+   return 0;
 }
