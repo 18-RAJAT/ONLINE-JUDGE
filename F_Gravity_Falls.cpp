@@ -19,14 +19,14 @@ void sol()
     vector<int>ans;
     while(ans.size()<mx)
     {
-        auto st=*st.begin();
-        int sz=st.size();
-        for(int i=0;i<sz;++i)ans.push_back(st[i]);
+        auto it=*st.begin();
+        int sz=it.size();
+        for(int i=0;i<sz;++i)ans.push_back(it[i]);
         set<vector<int>>st1;
-        for(auto &s:st)
+        for(auto& j:st)
         {
-            if(s.size()<=sz)continue;
-            vector<int>v2(s.begin()+sz,s.end());
+            if(j.size()<=sz)continue;
+            vector<int>v2(j.begin()+sz,j.end());
             st1.insert(v2);
         }
         st.swap(st1);
