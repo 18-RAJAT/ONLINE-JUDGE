@@ -17,8 +17,9 @@ void sol()
     {
         if(s[i]=='0')
         {
-            int l=i,r=i-1;
-            while(i<n && s[i]=='0')i++;
+            int l=i;
+            while(i<n && s[i]=='0')++i;
+            int r=i-1;
             if(r-l==0)
             {
                 ok=0;
