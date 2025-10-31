@@ -10,7 +10,7 @@ void sol()
     int ans=0;
     for(int i=0;i<n;++i)
     {
-        (s[i]=='2' && r0<x)?ans++,r0-=d:ans++,r0-=d;
+        (s[i]!='2' || r0<x)?(ans++,r0-=d):0;
     }
     cout<<ans<<endl;
 }
