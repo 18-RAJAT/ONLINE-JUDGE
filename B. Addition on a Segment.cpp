@@ -11,7 +11,7 @@ void sol()
     {
         cin>>a[i];
         sum+=a[i];
-        if(a[i]==0)res++;
+        if(a[i])res++;
     }
     cout<<min(res,sum-n+1)<<endl;
 }
