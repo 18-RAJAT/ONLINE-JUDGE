@@ -10,7 +10,7 @@ void sol()
     for(auto& it:a)
     {
         cin>>it;
-        (mx<it)?mx=it:ans++;
+        (mx<=it)?mx=it:ans++;
     }
     cout<<ans<<endl;
 }
